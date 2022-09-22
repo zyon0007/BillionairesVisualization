@@ -3,7 +3,7 @@
   "title": "Top 100 Billionaires in USA",
   "width": 800,
   "height": 400,
-  "projection": {"type": "equalEarth"},
+  "projection": {"type": "equirectangular"},
   "layer": [
     {
       "data": {
