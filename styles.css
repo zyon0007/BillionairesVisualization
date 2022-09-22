@@ -3,6 +3,8 @@
 	bottom: 100px; 
 	left: 100px;
 	right: 100px;
+	width: auto;
+	margin: 0 auto !important;
 	/*height: 1000px;
 	width: 800px;*/
 }
