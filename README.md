@@ -1,2 +1,2 @@
-# Billionaires Visualization
-Creating visualization for Forbes World's Billionaire
+# Week 9 Homework 3 
+Creating visualization for Top 100 Billionaire in USA.
