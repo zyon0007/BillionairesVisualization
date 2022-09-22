@@ -16,7 +16,7 @@
       "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "white"},
       "transform": [
         {
-          "calculate": "'No Billionaires in ' + datum.properties.name",
+          "calculate": "'No Billionaire in ' + datum.properties.name",
           "as": "NoBillionaires"
         }
       ],
