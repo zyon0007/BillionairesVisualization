@@ -1,0 +1,86 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Top 10 Billionaires's Net Worth in USA",
+  "width": 600,
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/zyon0007/Homework3/main/Top10Networth.csv"
+  },
+  "encoding": {
+    "x": {
+      "field": "Worth",
+      "type": "quantitative",
+      "title": "Net Worth",
+      "axis": {"labelAngle": -55}
+    },
+    "y": {"field": "Names", "type": "nominal", "title": "Name"}
+  },
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "state_highlight",
+          "select": {"type": "point", "fields": ["State"]},
+          "bind": "legend"
+        }
+      ],
+      "mark": "bar",
+      "encoding": {
+        "color": {
+          "field": "State",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "California",
+              "Hawaii",
+              "Nebraska",
+              "New York",
+              "Texas",
+              "Washington"
+            ],
+            "range": [
+              "#C39BD3",
+              "#7FB3D5",
+              "#A3E4D7",
+              "#F9E79F ",
+              "#EDBB99",
+              "#7DCEA0"
+            ]
+          }
+        },
+        "opacity": {
+          "condition": {"param": "state_highlight", "value": 0.8},
+          "value": 0.2
+        },
+        "tooltip": [
+          {"field": "State", "type": "nominal", "title": "State"},
+          {
+            "field": "Worth",
+            "type": "quantitative",
+            "title": "Net Worth",
+            "format": ".0f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "top",
+        "fontSize": 22,
+        "dx": -5,
+        "dy": -10,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {"field": "Worth", "type": "quantitative"},
+        "color": {"value": "blue"},
+        "opacity": {
+          "condition": {"test": "datum.State=='Texas'", "value": 1},
+          "value": 0
+        }
+      }
+    }
+  ]
+}
